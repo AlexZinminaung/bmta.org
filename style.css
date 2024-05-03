@@ -1,0 +1,291 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+
+/* styling the title bar logo bar and navbar */
+
+/* titlebar */
+
+.title-bar {
+    width: 100%;
+    min-height: 60px;
+    background-color: #3c4b4d;
+    
+}
+
+
+/* logobar */
+.logo-bar {
+    width: 100%;
+    min-height: 60px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+.logo-bar img {
+    max-width: 100px;
+    max-width: auto;
+}
+
+.logo-bar span {
+    font-size: 2rem;
+
+}
+
+/* navbar  */
+.navbar {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: #3c4b4d;
+    padding: 0.5rem;
+    position: sticky;
+    top: 0px;
+    z-index: 5;
+
+}
+
+
+.links-on-navbar {
+    display: flex;
+    gap: 1.5rem;
+    list-style-type: none;
+
+}
+
+.links-on-navbar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* mobile menu */
+.menu-for-mobile {
+    width: 50px;
+    display: none;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-right: 0.5rem;
+}
+
+.menu-for-mobile span {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 5px;
+    
+}
+
+/* dropdown  */
+
+.dropdown {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: #3c4b4d;
+    z-index: 5;
+}
+
+.project-link:hover .dropdown{
+    display: flex;
+}
+
+.training-link:hover .dropdown{
+    display: flex;
+}
+
+.edu-emer-link:hover .dropdown {
+    display: flex;
+}
+
+
+.dropdown a {
+    display: block;
+    padding: 1.3rem;
+    transition: all 0.8s;
+}
+
+.dropdown a:hover {
+    background-color: #4e5657;
+}
+
+/* make mobile navbar invisible  */
+
+.dropdown-mobile {
+    display: none;
+    background-color: #24484b;
+    font-size: 0.9rem;
+}
+
+.navbar-for-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .menu-for-mobile {
+        display: flex;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .navbar-for-mobile {
+        flex-direction: column;
+        background-color: #3c4b4d;
+        width: 100%;
+    }
+
+    .navbar-for-mobile a {
+        color: white;
+        text-align: center;
+        display: block;
+        padding: 20px 10px;
+        text-decoration: none;
+    }
+
+    .navbar-for-mobile a:hover {
+        background-color: #4e5657;
+    }
+
+    .navbar-for-mobile.active {
+        display: flex;
+
+    }
+
+    .logo-bar {
+        position: sticky;
+        top: 0px;
+    }
+
+    .logo-bar img {
+        width: 80px;
+        height: auto;
+    }
+
+    .logo-bar span {
+        font-size: 1.5rem;
+        margin-right: 0.4rem;
+    }
+/* make visible for projects link mobile version */
+    .dropdown-mobile-projects-links.active {
+        display: flex;
+        flex-direction: column;
+    }
+    
+/* make visible for trainning link mobile version */
+    .dropdown-mobile-teacher-training-links.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+  
+/* make visible for EDUCATION AND EMERGENCY RESPONSE link mobile version */
+    .dropdown-mobile-edu-emer-links.active {
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+
+
+
+
+
+/* Styling the main  */
+
+/* styling the binner display flex and resposive */
+
+.binner{
+    display: none;
+    padding: 3rem 3rem;
+    cursor: pointer;
+
+}
+
+/* make binner slider visible and add animation */
+
+.binner.showSlide {
+    display: flex;
+    animation-name: fade;
+    animation-duration: 3s;
+}
+
+@keyframes fade {
+    from {opacity: 0.7}
+    to{opacity: 1}
+}
+
+/* img-containr  */
+
+.binner-img-container{
+    width: 50%;
+    overflow: hidden;
+    background-color: black;
+    
+}
+
+.binner-img-container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 0.5;
+}
+
+/* flex the binner content */
+
+.binner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 0.8rem 1.5rem;
+}
+
+.binner-content h1 {
+    margin-bottom: 1rem;
+    
+}
+
+.binner-content a{
+    background-color: #4e5657;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    text-decoration: none;
+    color: white;
+    transition: all 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+
+.binner-content a:hover{
+    padding: 0.6rem;
+    margin: 0.6rem;
+    font-size: 1.2rem;
+    background-color: #24484b;
+}
+
+/* make binner reponsive for mobile */
+
+
+@media screen and (max-width: 600px) {
+    .binner {
+        flex-direction: column;
+        padding: 0px;
+    }
+
+    .binner .binner-img-container {
+        width: 100%;
+
+    }
+
+    .binner .binner-content{
+        width: 100%;
+    }
+}
